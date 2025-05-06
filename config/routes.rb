@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
   get("/", { :controller => "misc", :action => "homepage" })
+
+  get("/directors/youngest", {:controller => "ages", :action => "youngest"})
+
+  get("/directors/eldest", {:controller => "ages", :action => "eldest"})  
 
   get("/directors", {:controller => "directors", :action => "index"})
 
@@ -13,7 +18,5 @@ Rails.application.routes.draw do
 
   get("/actors/:the_id", {:controller => "actors", :action => "details"})
 
-  get("/directors/youngest", {:controller => "directors", :action => "youngest"})
 
-  get("/directors/eldest", {:controller => "directors", :action => "eldest"})
 end
